@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #demo {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #66ffa6;
+            position: absolute;
+        }
+        #demo1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #00e676;
+            position: relative;
+
+            opacity: 0.8;
+        }
+        #demo7 {
+            width: 50px;
+            height: 50px;
+            float: right;
+            border-radius: 25px;
+            background-color: #b8cc00;
+            position: absolute;
+        }
+        #demo8 {
+            width: 50px;
+            height: 50px;
+            float: right;
+            border-radius: 25px;
+            background-color: #ef6c00;
+            position: absolute;
+            opacity: 0.8;
+        }
+        #demo5 {
+
+            background: #dd2c00;
+            float: right;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            position: absolute;
+            animation: anims 6s linear infinite;
+        }
+
+        #demo6 {
+
+            width: 50px;
+            height: 50px;
+            background:red;
+            animation: shadow 4s linear infinite;
+            border-radius: 25px;
+            left: 50%;
+            float: right;
+            opacity: 0.8;
+            position: absolute;
+            /*animation: anim 6s linear infinite;*/
+        }
+        #demo9 {
+            width: 150px;
+            height: 150px;
+            background:palevioletred;
+            animation: shadow 4s linear infinite;
+            border-radius: 75px;
+            left: 50%;
+            float: left;
+            opacity: 0.8;
+            position: absolute;
+            /*animation: anim 6s linear infinite;*/
+        }
+
+
+        #demo2 {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #00e676;
+            position: relative;
+            opacity: 0.8;
+        }
+
+        #demo3 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            float: left;
+            background-color: #bbdefb;
+            position: relative;
+            animation-name: move, scale, rotate;
+            animation-duration: 4s, 4s, 4s;
+            animation-iteration-count: infinite, infinite, infinite;
+            animation-timing-function: ease-in-out, linear, linear;
+        }
+
+        #demo4 {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            float: right;
+            background-color: green;
+            position: relative;
+            animation-name: move, scale, rotate;
+            animation-duration: 4s, 4s, 4s;
+            animation-iteration-count: infinite, infinite, infinite;
+            animation-timing-function: ease-in-out, linear, linear;
+
+        }
+
+        @keyframes move {
+            0% {
+                left: 250px;
+            }
+
+            70% {
+                left: -250px;
+            }
+
+            100% {
+                left: 250px;
+            }
+        }
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+
+            32% {
+                transform: scale(0.4);
+                animation-timing-function: ease-in;
+            }
+
+            70% {
+                transform: scale(1);
+                animation-timing-function: ease-in;
+            }
+
+            75% {
+                transform: scale(1.2);
+                animation-timing-function: ease-in-out;
+            }
+
+            86% {
+                transform: scale(2);
+            }
+
+            98% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                background-position: 0px;
+            }
+
+            100% {
+                background-position: 190px;
+            }
+        }
+
+        body {
+            background-color: #E1BEE7;
+
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-container {
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-container:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #4e342e;
+            bottom: 0;
+            opacity: 0.6;
+            left: 50%;
+            animation: shadow 2s linear infinite;
+        }
+
+        .circle-container:nth-child(2):after {
+            animation-delay: -0.3s;
+        }
+
+        .circle-container:nth-child(3):after {
+            animation-delay: -0.6s;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            background: #003c8f;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            position: absolute;
+            animation: anim 2s linear infinite;
+        }
+
+
+        .circle-container:nth-child(2) .circle {
+            animation-delay: -0.3s;
+        }
+
+        .circle-container:nth-child(3) .circle {
+            animation-delay: -0.6s;
+        }
+
+        @keyframes anim {
+            0% {
+                transform-origin: 400% 50%;
+            }
+
+            50% {
+                transform: rotate(360deg);
+                transform-origin: 400% 50%;
+            }
+
+            50.1% {
+                transform: rotate(0);
+                transform-origin: -300% 50%;
+            }
+
+            100% {
+                transform: rotate(-360deg);
+                transform-origin: -300% 50%;
+            }
+        }
+
+        @keyframes anims {
+            25% {
+                transform-origin: 400% 50%;
+            }
+
+            50% {
+                transform: rotate(360deg);
+                transform-origin: 400% 50%;
+            }
+
+            75% {
+                transform: rotate(0);
+                transform-origin: 300% 50%;
+            }
+
+            95% {
+                transform: rotate(0);
+                transform-origin: 300% 50%;
+            }
+
+
+        }
+
+        @keyframes shadow {
+            0% {}
+
+            15% {
+                transform: translate(50px) scale(0.6);
+            }
+
+            25% {
+                transform: translate(120px);
+            }
+
+            38% {
+                transform: translate(50px) scale(1.4);
+            }
+
+            50% {
+                transform: translate(0px);
+            }
+
+            65% {
+                transform: translate(-50px) scale(0.6);
+            }
+
+            75% {
+                transform: translate(-120px);
+            }
+
+            88% {
+                transform: translate(-50px) scale(1.4);
+            }
+
+            100% {
+                transform: translate(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <div id="demo1"></div>
+    <div id="demo3"></div>
+    <div id="demo4"></div>
+    <div id="demo5"></div>
+    <div id="demo6"></div>
+    <div id="demo7"></div>
+    <div id="demo8"></div>
+    <div id="demo9"></div>
+    <div class="container">
+        <div class="circle-container">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-container">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-container">
+            <div class="circle"></div>
+        </div>
+    </div>
+    </div>
+    <div class="load-wrapp">
+        <div class="load-3">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            box1();
+        })
+        function box1() {
+            var div = $("#demo");
+            var div1 = $("#demo1");
+            var div2 = $("#demo2");
+            var div3 = $("#demo3");
+            var div5 = $("#demo5");
+            var div6 = $("#demo6");
+            var div7 = $("#demo7");
+            var div8 = $("#demo8");
+            div.animate({ left: '700px' })
+                .animate({ top: '500px' })
+                .animate({ left: '0' })
+                .animate({ top: '0' }, 1000, function () {
+                    box1();
+
+                })
+            div1.animate({ left: '700px' })
+                .animate({ top: '500px' })
+                .animate({ left: '0' })
+                .animate({ top: '0' }, 1000, function () {
+                    box1();
+
+                })
+            div7.animate({ left: '800px' })
+                .animate({ top: '600px' })
+                .animate({ left: '300px' })
+                .animate({ top: '300px' }, 1000, function () {
+                    box1();
+
+                })
+            div8.animate({ right: '800px' })
+                .animate({ top: '600px' })
+                .animate({ right: '300px' })
+                .animate({ top: '300px' }, 1000, function () {
+                    box1();
+
+                })
+
+            div5.animate({ right: '100px' })
+                .animate({ bottom: '50px' })
+                .animate({ right: '100px' })
+                .animate({ bottom: '50px' }, 1000, function () {
+                    box1();
+
+                })
+            div6.animate({ top: '300px' })
+                .animate({ right: '100' })
+                .animate({ top: '100' })
+                .animate({ right: '300px' }, 1000, function () {
+                    box1();
+
+                })
+        }
+    </script>
+</body>
+
+</html>
